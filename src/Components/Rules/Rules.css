@@ -1,0 +1,17 @@
+.rules-container {
+  background: black;
+}
+
+.rules-container h1 {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.rules-container ol li {
+  color: #fff;
+  padding: 10px;
+  margin: 10px;
+}

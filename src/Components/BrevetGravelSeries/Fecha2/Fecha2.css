@@ -1,0 +1,31 @@
+.brevet-container {
+    background-color: black;
+  }
+  .flyer-container {
+    display: flex;
+    justify-content: center;
+  }
+  .flyer-container img {
+    margin: 30px;
+    width: 900px;
+  }
+  .flyer-container p {
+    width: 600px;
+    color: white;
+    margin: 30px;
+  }
+  
+  .brevet-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  @media screen and (max-width: 992px) {
+    .flyer-container img {
+      margin: 30px;
+      width: 300px;
+    }
+  }
+  

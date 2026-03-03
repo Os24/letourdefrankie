@@ -1,0 +1,85 @@
+.sponsors-container {
+  background: black;
+  height: 700px;
+}
+
+.sponsors-container .sponsors-title {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sponsors-container .sponsors-title h2 {
+  color: #fff;
+  padding: 20px;
+}
+.sponsors-container .sponsors-title h6 {
+  color: #fff;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.sponsors-container .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sponsors-container .alubike-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.sponsors-container .png-logo {
+  display: flex;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+
+}
+
+.sponsors-container .silver-logo {
+  display: flex;
+  justify-content: center;
+}
+.sponsors-container .logo img {
+  width: 150px;
+}
+
+.sponsors-container .logo .apidura {
+  width: 150px;
+}
+
+.sponsors-container .alubike-logo img {
+  width: 190px;
+}
+
+.sponsors-container .named-sport-logo {
+  display: flex;
+  justify-content: center;
+  /* margin-top: 30px; */
+}
+.sponsors-container .named-sport-logo img {
+  width: 165px;
+  /* height: 115px; */
+  
+}
+
+.sponsors-container .silver-logo img {
+  width: 80px;
+}
+
+@media screen and (max-width: 992px) {
+  .sponsors-container {
+    height: 1050px;
+  }
+  .sponsors-container .named-sport-logo img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .sponsors-container .logo .apidura {
+    width: 140px;
+  }
+}

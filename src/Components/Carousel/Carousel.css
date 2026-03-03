@@ -1,0 +1,28 @@
+.carousel-container {
+  background: #000;
+  padding: 100px;
+}
+
+.carousel-indicators [data-bs-target] {
+  border: none !important;
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 10px;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.title-container h2 {
+  color: #fff;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 992px) {
+  .carousel-container {
+    padding: 20px;
+  }
+}

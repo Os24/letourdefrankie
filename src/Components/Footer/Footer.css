@@ -1,0 +1,10 @@
+.footer-container {
+  background: #000;
+  height: 40px;
+}
+
+.footer-container span {
+  color: #fff;
+  font-size: 10px;
+  margin: 10px;
+}

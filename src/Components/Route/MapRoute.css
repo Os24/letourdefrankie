@@ -1,0 +1,47 @@
+.map-route-container {
+  height: 900px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../../src/images/carousel/12.jpg");
+}
+
+.map-route-container .custom-row {
+  padding-top: 40px;
+}
+
+.map-route-container .iframe-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-route-container .route-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-route-container .route-text-container h2 {
+  color: #fff;
+  font-weight: 600;
+  font-family: "Montserrat";
+  margin-top: 30px;
+}
+
+.map-route-container .route-text-container ul {
+  list-style: none;
+}
+
+.map-route-container .route-text-container ul {
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 10px;
+}
+
+.logo img {
+  width: 150px;
+}
