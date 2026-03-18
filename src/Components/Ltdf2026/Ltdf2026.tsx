@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import {
   Container,
@@ -10,11 +10,13 @@ import {
   ButtonGroup,
   Dropdown,
   DropdownButton,
+  Tooltip,
+  OverlayTrigger,
 } from "react-bootstrap";
-import mainImg from "../../../src/images/postr_2025.jpg";
+import mainImg from "../../../src/images/flyer2026ltdf.jpg";
 import Countdown from "react-countdown";
-import { Helmet } from "react-helmet";
 
+import "./Ltdf2026.css";
 
 declare global {
   interface Window {
@@ -23,819 +25,1174 @@ declare global {
 }
 const Ltdf2026: React.FC = () => {
   const [cat, setCat] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("Femenino");
+  const [filters, setFilters] = useState({
+    name: "",
+    raceNumber: "",
+    nationality: "",
+  });
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 20;
 
+  const EventbriteWidget = ({ eventId }) => {
+    useEffect(() => {
+      const script = document.createElement("script");
+      script.src = "https://www.eventbrite.com/static/widgets/eb_widgets.js";
+      script.async = true;
+      script.onload = () => {
+        if (window.EBWidgets) {
+          window.EBWidgets.createWidget({
+            widgetType: "checkout",
+            eventId: eventId, // Usa el prop eventId
+            iframeContainerId: "eventbrite-widget-container", // El ID del contenedor
+            iframeContainerHeight: 425,
+            onClose: () => {
+              // Manejar el cierre del widget si es necesario
+              console.log("Eventbrite widget closed");
+            },
+          });
+        }
+      };
 
-const EventbriteWidget = ({ eventId }) => {
-  useEffect(() => {
-      const script = document.createElement('script');
-    script.src = 'https://www.eventbrite.com/static/widgets/eb_widgets.js';
-    script.async = true;
-    script.onload = () => {
-      if (window.EBWidgets) {
-        window.EBWidgets.createWidget({
-          widgetType: 'checkout',
-          eventId: eventId, // Usa el prop eventId
-          iframeContainerId: 'eventbrite-widget-container', // El ID del contenedor
-          iframeContainerHeight: 425,
-          onClose: () => {
-            // Manejar el cierre del widget si es necesario
-            console.log('Eventbrite widget closed');
-          },
-        });
-      }
-    };
+      document.body.appendChild(script);
+      // Devuelve la función de limpieza
+      return () => {
+        // Cleanup script when component unmounts
+        document.body.removeChild(script);
+        const container = document.getElementById(
+          "eventbrite-widget-container",
+        );
+        if (container) {
+          container.innerHTML = "";
+        }
+      };
+    }, [eventId]);
 
-    document.body.appendChild(script);
-    // Devuelve la función de limpieza
-    return () => {
-      // Cleanup script when component unmounts
-      document.body.removeChild(script);
-      const container = document.getElementById('eventbrite-widget-container');
-      if (container) {
-        container.innerHTML = '';
-      }
-    };
-  }, [eventId]);
-  
-  // El return de este componente (fuera del useEffect) es el JSX normal
-  return (
-    <div id="eventbrite-widget-container">
-  
-    </div>
-  );
-};
+    // El return de este componente (fuera del useEffect) es el JSX normal
+    return <div id="eventbrite-widget-container"></div>;
+  };
 
   const maleParticipants = [
     {
-      position: "TBA",
+      name: "Sebastián Miranda",
+      raceNumber: "01",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Daniel Marques",
       raceNumber: "02",
-      name: "Simon Luelsdorf",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇧🇷",
+      finishTime: "TBD",
       badge: 50,
     },
-
     {
-      position: "TBA",
+      name: "Francisco Garcia",
       raceNumber: "03",
-      name: "Mauricio Lara",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "edgar david santiago rosas",
       raceNumber: "04",
-      name: "Jonas Hess",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Jose Rogelio Covarrubias cardenas",
       raceNumber: "05",
-      name: "Rafael Teran",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Fernando Jimenez",
       raceNumber: "06",
-      name: "Gregory Topete",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Stuart Brown",
       raceNumber: "07",
-      name: "Lucas Meyer de Freitas",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇬🇧",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Marino Spinoza",
       raceNumber: "08",
-      name: "Manuel Perez",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
-
     {
-      position: "TBA",
+      name: "Emmanuel Guzman",
       raceNumber: "09",
-      name: "Miguel Martinez",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Luis Villedas",
       raceNumber: "10",
-      name: "Sean Martin",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Pablo Manuel Martínez Sandoval",
       raceNumber: "11",
-      name: "Alvin Escajeda",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Carlos Galvan",
       raceNumber: "12",
-      name: "Greg Garth",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Daniel Rueda Martinez",
       raceNumber: "13",
-      name: "Roman Martinez",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Armando González",
       raceNumber: "14",
-      name: "Juan Sebastian Perez",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Kevin Cabrera",
       raceNumber: "15",
-      name: "Juan Mojarro",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Sergio Krasowsky",
+      raceNumber: "16",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Luis Orozco Sanchez",
       raceNumber: "17",
-      name: "Ali Rodriguez",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇺🇸",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Gerardo Carrillo",
+      raceNumber: "19",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Esteban Flores Montero",
+      raceNumber: "20",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Christopher Chavez",
       raceNumber: "21",
-      name: "Jacobo Rodriguez",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Nicholas Tornambe",
       raceNumber: "22",
-      name: "Ulises Vásquez",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇺🇸",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Armando Garcia Llanos",
       raceNumber: "23",
-      name: "Javi Velasquez",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Zachary Morvant",
       raceNumber: "24",
-      name: "Luis Alberto Muñoz",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇺🇸",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Alberto Ruiz",
       raceNumber: "25",
-      name: "Elliot Levi Ramos",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "José Guillermo Femat Zarazúa",
       raceNumber: "26",
-      name: "Ivan Sandoval",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Erick Hernandez Guerrero",
       raceNumber: "27",
-      name: "Andres Castillo",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
-      raceNumber: "28",
-      name: "Juan Franquiz",
-      finishTime: "TBA",
-      distance: "TBA",
-      badge: 50,
-    },
-    {
-      position: "TBA",
+      name: "Salvador Islas",
       raceNumber: "29",
-      name: "Christian Ramirez",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Patricio Rodríguez",
+      raceNumber: "30",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Francisco Michell Salinas González",
       raceNumber: "31",
-      name: "Cooper Ray",
-      distance: "TBA",
-      finishTime: "TBA",
-      badge: 50,
-    },
-
-    {
-      position: "TBA",
-      raceNumber: "32",
-      name: "Enrique Llerena",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Daniel Jasso Hernández",
       raceNumber: "33",
-      name: "Abraham Gonzalez",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "GIBRÁN NANDÍ AYALA",
       raceNumber: "34",
-      name: "Rafael Torres",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Brian Baird",
       raceNumber: "35",
-      name: "Juan de Dios Guadarrama",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇺🇸",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Ernesto Cano",
       raceNumber: "36",
-      name: "Juan Pablo Gama",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
-      raceNumber: "37",
-      name: "Omar Pulido",
-      distance: "TBA",
-      finishTime: "TBA",
-      badge: 50,
-    },
-    {
-      position: "TBA",
+      name: "moises castillo",
       raceNumber: "38",
-      name: "Raul Mcpalm",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "axel zoe vega anzaldo",
       raceNumber: "39",
-      name: "Mauricio Garcia",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
-
     {
-      position: "TBA",
+      name: "Ernesto Cano arguelles",
       raceNumber: "40",
-      name: "Efren Santos",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇺🇸",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "david berumen",
       raceNumber: "41",
-      name: "Tyreck Velazquez",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Omar Pulido",
       raceNumber: "42",
-      name: "Jorge Uriel Dominguez",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Doryan salvador Apolinar Callejas López",
       raceNumber: "43",
-      name: "Miguel Angel Huesca",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Iván Iglesias Martinez",
       raceNumber: "44",
-      name: "Noe Santana",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Sergio Aponte",
       raceNumber: "45",
-      name: "Alejandro Gomez",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Jacobo Rodriguez Arredondo",
       raceNumber: "46",
-      name: "Neftali Donato",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "DONALDO RAMOS",
       raceNumber: "47",
-      name: "Ignacio Pelayo",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Jesús Estrada",
       raceNumber: "48",
-      name: "Adan Montaño",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "julian Manrique",
       raceNumber: "49",
-      name: "Javier Martinez",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇨🇴",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "ELLIOT LEVI RAMOS SALDAÑA",
       raceNumber: "50",
-      name: "Felipe de Jesus Cebada",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
-      raceNumber: "51",
-      name: "Miguel Alatorre",
-      distance: "TBA",
-      finishTime: "TBA",
-      badge: 50,
-    },
-    {
-      position: "TBA",
+      name: "Manuel Vargas",
       raceNumber: "52",
-      name: "Heriberto Trejo",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Sebastiano Frandino",
       raceNumber: "53",
-      name: "Mario Uziel Reyes",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇮🇹",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "César Ixehuatl Mejía",
       raceNumber: "54",
-      name: "Esteban Cuarenta",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Ricardo Arista Mejía",
       raceNumber: "55",
-      name: "Victor Ponce",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Jorge luis Larrea lopez",
       raceNumber: "56",
-      name: "Carlos Bala",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
-      raceNumber: "57",
-      name: "Alejandro Garduño",
-      finishTime: "TBA",
-      distance: "TBA",
-      badge: 50,
-    },
-    {
-      position: "TBA",
-      raceNumber: "58",
-      name: "Vogar Hernandez",
-      distance: "TBA",
-      finishTime: "TBA",
-      badge: 50,
-    },
-    {
-      position: "TBA",
+      name: "Ethan Weir",
       raceNumber: "59",
-      name: "Edrei Tellez",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇺🇸",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
-      raceNumber: "60",
-      name: "Osvaldo Serrano",
-      distance: "TBA",
-      finishTime: "TBA",
-      badge: 50,
-    },
-    {
-      position: "TBA",
+      name: "Carlos Vazquez",
       raceNumber: "61",
-      name: "Ernesto Vidal",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Miguel Alatorre",
       raceNumber: "62",
-      name: "Jorge Sanchez",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Reid Passmore",
+      raceNumber: "63",
+      nationality: "🇺🇸",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Alfredo Morón",
       raceNumber: "64",
-      name: "Jesus Esparza",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Max Maclean",
       raceNumber: "65",
-      name: "Sebastian Miranda",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇬🇧",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Gerardo Rojano",
       raceNumber: "66",
-      name: "Esteban Robles",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Juan Pablo Gama Gonzalez",
+      raceNumber: "67",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Ivan Oziel Gonzalez Huerta",
       raceNumber: "68",
-      name: "Eduardo Avalos",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Brian Elander",
       raceNumber: "69",
-      name: "Saturnino Ruano",
-      distance: "TBA",
-      finishTime: "TBA",
+      nationality: "🇺🇸",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
-      raceNumber: "71",
-      name: "Azareel Martínez",
-      distance: "TBA",
-      finishTime: "TBA",
+      name: "Miguel Ángel Huesca García",
+      raceNumber: "70",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
+    {
+      name: "Joaquin Perez Zamudio",
+      raceNumber: "71",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Francisco javier Luna Vazquez",
+      raceNumber: "72",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Fernando Arriaga",
+      raceNumber: "73",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Miguel Angel Mendoza",
+      raceNumber: "74",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Ulises Jimenez Alfaro",
+      raceNumber: "75",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Raul McPalm",
+      raceNumber: "76",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Hector Mendez Cruz",
+      raceNumber: "77",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "MISAEL RIOS",
+      raceNumber: "78",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Carlos Bala",
+      raceNumber: "79",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Enrique Sandoval",
+      raceNumber: "80",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Andres Castillo",
+      raceNumber: "81",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Daniel Alberto Medina Leon",
+      raceNumber: "82",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Abraham González Ruíz",
+      raceNumber: "83",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Rafael Ospino",
+      raceNumber: "84",
+      nationality: "🇨🇴",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Antonio Jesús",
+      raceNumber: "85",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Christian Ivan Rodríguez Vences",
+      raceNumber: "86",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Luis Alberto Ramirez Diaz",
+      raceNumber: "87",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Miguel Martínez",
+      raceNumber: "88",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Mariano Torres Villanueva",
+      raceNumber: "89",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "MAURICIO ENRIQUEZ",
+      raceNumber: "90",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Ernesto Vidal Flores",
+      raceNumber: "91",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Eder Alexio Cruz Pérez",
+      raceNumber: "92",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Angel Zetina",
+      raceNumber: "93",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "MISAEL DE PAZ CASTILLO",
+      raceNumber: "94",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Federico Arturo León Solis",
+      raceNumber: "95",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Juan Javier Martinez Garmendia",
+      raceNumber: "96",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Brad Sutton",
+      raceNumber: "97",
+      nationality: "🇺🇸",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Alejandro Garduño",
+      raceNumber: "98",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "JULIO VERTIZ",
+      raceNumber: "99",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Gustavo Ruiz",
+      raceNumber: "100",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Rabbi Abba Flores Gutiérrez",
+      raceNumber: "101",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Héctor Castillo",
+      raceNumber: "104",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Luis Jorge Rivera Pérez",
+      raceNumber: "105",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Alvaro García Córdova",
+      raceNumber: "109",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Mauricio García Rocha",
+      raceNumber: "111",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "franco garrido",
+      raceNumber: "112",
+      nationality: "🇨🇱",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Roma Cibrian",
+      raceNumber: "113",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Jorge Edmundo Alvarado Torres",
+      raceNumber: "114",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Rodrigo Moreno",
+      raceNumber: "115",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Fernando Hernández Contreras",
+      raceNumber: "117",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "saturnino ruano",
+      raceNumber: "118",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Omar Olivares",
+      raceNumber: "119",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Blade Cleaver",
+      raceNumber: "120",
+      nationality: "🇨🇦",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Luis Felipe Alvarez Hinojosa",
+      raceNumber: "121",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Jorge Francia",
+      raceNumber: "122",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "JUAN HERNANDEZ",
+      raceNumber: "123",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Thomas Van Laake",
+      raceNumber: "124",
+      nationality: "🇳🇱",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Eduardo Avalos",
+      raceNumber: "125",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Javier Chavez",
+      raceNumber: "126",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    }
   ];
 
   const femaleParticipants = [
     {
-      position: "TBA",
-      raceNumber: "01",
-      name: "Zaira Contreras",
-      finishTime: "TBA",
-      distance: "TBA",
-      badge: 50,
-    },
-    {
-      position: "TBA",
-      raceNumber: "16",
-      name: "Tania Arana",
-      finishTime: "TBA",
-      distance: "TBA",
-      badge: 50,
-    },
-    {
-      position: "TBA",
+      name: "Lucelia Castillejos",
       raceNumber: "18",
-      name: "Diana Gutierrez",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
-      raceNumber: "19",
-      name: "Diana Camacho",
-      finishTime: "TBA",
-      distance: "TBA",
+      name: "Grisell Olivia Cruz Navarro",
+      raceNumber: "28",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
-      raceNumber: "20",
-      name: "Fernanda Gutierrez",
-      finishTime: "TBA",
-      distance: "TBA",
+      name: "Mariana Devesa",
+      raceNumber: "32",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
-      raceNumber: "30",
+      name: "Elda Guzman Morales",
+      raceNumber: "37",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Santa Alexandra Coria Juarez",
+      raceNumber: "51",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Ana Saucedo",
+      raceNumber: "57",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "PAULA XIMENA Zenteno Arvizu",
+      raceNumber: "58",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Carol Aylin",
+      raceNumber: "60",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Bren Zamora",
+      raceNumber: "102",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
       name: "Paola Berber",
-      finishTime: "TBA",
-      distance: "TBA",
+      raceNumber: "103",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
-      raceNumber: "70",
-      name: "Edna Gonzalez",
-      distance: "TBA",
-      finishTime: "TBA",
+      name: "Diana Gutierrez",
+      raceNumber: "106",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Maria Fernanda Pacheco",
+      raceNumber: "107",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Zaira Contreras Escamilla",
+      raceNumber: "108",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Siomara Gama",
+      raceNumber: "110",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Karla Alejandra Martínez Suro",
+      raceNumber: "116",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
   ];
 
   const freeParticipants = [
     {
-      position: "TBA",
-      raceNumber: "67",
-      name: "Sofia Zarate",
-      finishTime: "TBA",
-      distance: "TBA",
-      badge: 50,
+      name: "Ro Alegre",
+      raceNumber: "151",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
     },
   ];
 
   const doublesParticipants = [
     {
-      position: "TBA",
+      name: "Emmitt Adrian Rivera & Nelson Chavez",
       raceNumber: "001",
-      name: "Nelson Chavez & Emmit Rivera",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Alejandro Maya & Liliana Lizette Castañeda",
       raceNumber: "002",
-      name: "Ernesto cano & Edgar Luna",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Jesús Leyva & Yazmin Solano",
       raceNumber: "003",
-      name: "Alan Bermudez & Cristopher Isai Magaña",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Ricardo Adan Trejo & Abner Yoab Gonzalez",
       raceNumber: "004",
-      name: "Moctezuma Martinez & Omar Olivares",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Hildeberto Villa & Hector Manuel Alvarez",
       raceNumber: "005",
-      name: "Carolina Leiva & Argelia Pineda",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Antonio Baltazar & Filiberto Fuentes",
       raceNumber: "006",
-      name: "Francisco Marmolejo & Pablo Mabarak",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Juan Manuel Muciño & Eduardo Salvador Gonzalez",
       raceNumber: "007",
-      name: "Alex Reynolds & Lezly Pineda",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Jonathan Martinez & Ricardo Velázquez",
       raceNumber: "008",
-      name: "Felix Cantu & Pablo Valdes",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Fernando Alan Perez & Gustavo Serrano",
       raceNumber: "009",
-      name: "Daniel Castillo & Julio Torres",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Diego Velázquez & Miguel Sanson",
       raceNumber: "010",
-      name: "Osvaldo de la Riva & Omar de la Riva",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
-      raceNumber: "011",
-      name: "Carlos Quiroz & Alberto Taquex",
-      finishTime: "TBA",
-      distance: "TBA",
-      badge: 50,
-    },
-    {
-      position: "TBA",
-      raceNumber: "012",
-      name: "Joaquin Gonzalez & Emiliano Cardenas",
-      finishTime: "TBA",
-      distance: "TBA",
-      badge: 50,
-    },
-    {
-      position: "TBA",
-      raceNumber: "013",
-      name: "Liliana Gonzalez & Guillermo Femat",
-      finishTime: "TBA",
-      distance: "TBA",
-      badge: 50,
-    },
-    {
-      position: "TBA",
-      raceNumber: "014",
-      name: "Coral Garcia & Edgar Verduzco",
-      finishTime: "TBA",
-      distance: "TBA",
-      badge: 50,
-    },
-    {
-      position: "TBA",
-      raceNumber: "015",
-      name: "Oscar Figueroa & Daniel Figueroa ",
-      finishTime: "TBA",
-      distance: "TBA",
-      badge: 50,
-    },
-    {
-      position: "TBA",
-      raceNumber: "016",
-      name: "Sergio Garcia & Yameli Alfano ",
-      finishTime: "TBA",
-      distance: "TBA",
-      badge: 50,
-    },
-    {
-      position: "TBA",
-      raceNumber: "017",
       name: "Gabriela Guerra & Gilberto Reza",
-      finishTime: "TBA",
-      distance: "TBA",
+      raceNumber: "011",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Felipe de Jesus Cebada & Adan Montaño",
+      raceNumber: "012",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Osvaldo Garcia & Lennin Heberto Flores",
+      raceNumber: "013",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Gerardo Garfias & Arturo Galicia",
+      raceNumber: "014",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Noe Delgadillo & Daniel Salas Pérez",
+      raceNumber: "015",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Francisco Zamarripa & Marcos Gerardo Franco",
+      raceNumber: "016",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Daniel Zapata & Andrés Cervantes",
+      raceNumber: "017",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Neftalí Gabriela & Gabriela Mijangos",
       raceNumber: "018",
-      name: "Alberto Mora & Fernando Mora",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "Emmanuel López & Erick Alberto Mendiola",
       raceNumber: "019",
-      name: "Felix Contreras & Victor Perez",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
+      name: "David Esau Franco & Luis Felipe Alvarez",
       raceNumber: "020",
-      name: "Osvaldo Garcia  & Juan Pablo Hernandez",
-      finishTime: "TBA",
-      distance: "TBA",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
     {
-      position: "TBA",
-      raceNumber: "063",
-      name: "Alejandro Maya & Itai Vazquez",
-      finishTime: "TBA",
-      distance: "TBA",
+      name: "Moisés Zepeda & Ali Villeda Garcia",
+      raceNumber: "021",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
       badge: 50,
     },
   ];
+  
+  useEffect(() => {
+    // Load female participants by default
+    const sortedFemaleParticipants = femaleParticipants.sort((a, b) => a.badge - b.badge);
+    setCat(sortedFemaleParticipants);
+  }, []);
+
+  const handleFilterChange = (field, value) => {
+    setFilters((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+    setCurrentPage(1);
+  };
+
+  const capitalizeNames = (name) => {
+    return name
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
+
+  const filteredParticipants = cat.filter((participant) => {
+    return (
+      participant.name.toLowerCase().includes(filters.name.toLowerCase()) &&
+      participant.raceNumber
+        .toLowerCase()
+        .includes(filters.raceNumber.toLowerCase()) &&
+      participant.nationality
+        .toLowerCase()
+        .includes(filters.nationality.toLowerCase())
+    );
+  });
+
+  const totalPages = Math.ceil(filteredParticipants.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const paginatedParticipants = filteredParticipants.slice(startIndex, endIndex);
 
   const handleSelect = (e) => {
     let sortedParticipants = maleParticipants;
     if (e === "maleParticipants") {
       sortedParticipants = maleParticipants.sort((a, b) => a.badge - b.badge);
       setCat(sortedParticipants);
+      setSelectedCategory("Masculino");
+      setCurrentPage(1);
     }
     if (e === "femaleParticipants") {
       sortedParticipants = femaleParticipants.sort((a, b) => a.badge - b.badge);
       setCat(sortedParticipants);
+      setSelectedCategory("Femenino");
+      setCurrentPage(1);
     }
     if (e === "doublesParticipants") {
       sortedParticipants = doublesParticipants.sort(
-        (a, b) => a.badge - b.badge
+        (a, b) => a.badge - b.badge,
       );
       setCat(sortedParticipants);
+      setSelectedCategory("Duplas");
+      setCurrentPage(1);
     }
     if (e === "freeParticipants") {
       setCat(freeParticipants);
+      setSelectedCategory("Libre");
+      setCurrentPage(1);
     }
   };
 
   return (
     <div className="brevet-container">
       <Container>
-        <Row>
+         <Row>
           <Col className="flyer-container">
-           <h1 className="custom-title">EN CONSTRUCCION</h1>
+            <Image src={mainImg} />
           </Col>
         </Row>
         <Row>
@@ -848,63 +1205,76 @@ const EventbriteWidget = ({ eventId }) => {
 
           <Row>
             <h1 className="custom-title">RUTA</h1>
-            {/* <iframe
-              src="https://www.followmychallenge.com/live/letourdefrankie25/?iframe"
-              style={{ width: "900px", height: "500px", border: "none" }}
-            ></iframe> */}
-            <h1 className="custom-title">CDMX - PUERTO ESCONDIDO</h1>
-          </Row>
-          <Row>
-            <Col className="brevet-btn-container "></Col>
-          </Row>
-          <Row>
             <iframe
-              style={{ width: "1200px", height: "800px", border: "none" }}
-              src="https://www.youtube.com/embed/mVe0L4n1C5A?si=q2cKBKmLMLUIDhsE"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              src="https://ridewithgps.com/embeds?type=route&id=54284995&metricUnits=true&sampleGraph=true"
+              style={{ width: "100%", height: "500px", border: "none" }}
             ></iframe>
-            <Col className="brevet-btn-container ">
+             <Col className="brevet-btn-container " style={{ padding: '20px 0', textAlign: 'center' }}>
               <Button
                 href="https://drive.google.com/uc?export=download&id=1A5oy-o643U2hXurJ7rdM783JbTMaSlxG"
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="dark"
               >
-                DESCARGAR RUTA OFICIAL
+                DESCARGAR RUTA OFICIAL 2026
               </Button>
             </Col>
+            <h1 className="custom-title">CDMX - PUERTO ESCONDIDO</h1>
+          </Row>
+          <Row>
+            <Col className="brevet-btn-container "></Col>
+          </Row>
+          <Row>
+            <div className="responsive-iframe-container">
+              <iframe
+                className="responsive-iframe"
+                src="https://www.youtube.com/embed/mVe0L4n1C5A?si=q2cKBKmLMLUIDhsE"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              ></iframe>
+            </div>
+           
           </Row>
           <Row>
             <h1 className="custom-title">INICIO DE CARRERA</h1>
             <h1 className="custom-title">
               {" "}
-              <Countdown date={Date.parse("25 Apr 2026 01:00:00 GMT") + 1000} />
+              <Countdown
+                date={Date.parse("25 Apr 2026 01:00:00 GMT") + 1000}
+                renderer={({ days, hours, minutes, seconds }) => (
+                  <span>
+                    {days}D : {hours}HRS : {minutes}MIN : {seconds}SEC
+                  </span>
+                )}
+              />
             </h1>
-            <h1 className="custom-title"> INSCRIPCIONES A PARTIR DEL 15 DE NOVIEMBRE 2025</h1>
-            <EventbriteWidget eventId={'1970542590935'}/>
-
+            <h1 className="custom-title">
+              {" "}
+              INSCRIPCIONES AGOTADAS
+            </h1>
+            <EventbriteWidget eventId={"1970542590935"} />
+{/* 
             <Col className="brevet-btn-container ">
-              
-              
               <Button
                 href="https://www.eventbrite.com.mx/e/le-tour-de-frankie-el-infierno-del-sur-2026-tickets-1970542590935?aff=oddtdtcreator"
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="dark"
-              
               >
                 QUIERO INSCRIBIRME
               </Button>
-            </Col>
+            </Col> */}
           </Row>
           <Row>
-            {/* <Col>
+            <Col>
               {" "}
               <h1 className="custom-title">LISTA DE CORREDORES</h1>
+              <p style={{ fontSize: "1.1em", fontWeight: "bold", marginBottom: "10px", color: "#fff" }}>
+                Categoría:
+              </p>
               <div className="btn-container">
                 <DropdownButton
-                  title="CATEGORY"
+                  title={selectedCategory}
                   id="dropdown-menu-align-right"
                   variant="dark"
                   onSelect={handleSelect}
@@ -929,25 +1299,173 @@ const EventbriteWidget = ({ eventId }) => {
                   striped
                   bordered
                   hover
-                  variant="dark"
+                  variant="light"
                   size="sm"
                 >
                   <thead>
                     <tr>
-                      <th>Cap Number</th>
                       <th>Position</th>
-                      <th>Name</th>
+                      <th>
+                        Cap Number{" "}
+                        <OverlayTrigger
+                          trigger="click"
+                          rootClose
+                          placement="bottom"
+                          overlay={
+                            <Tooltip id="tooltip-cap-filter">
+                              <input
+                                className="filter-input"
+                                type="text"
+                                placeholder="🔍 Filter..."
+                                value={filters.raceNumber}
+                                onChange={(e) =>
+                                  handleFilterChange(
+                                    "raceNumber",
+                                    e.target.value,
+                                  )
+                                }
+                                onClick={(e) => e.stopPropagation()}
+                                style={{
+                                  padding: "8px 10px",
+                                  fontSize: "0.85em",
+                                  backgroundColor: "#2a2a2a",
+                                  color: "#fff",
+                                  border: "2px solid #ffc107",
+                                  borderRadius: "4px",
+                                  outline: "none",
+                                }}
+                              />
+                            </Tooltip>
+                          }
+                        >
+                          <Button
+                            variant="link"
+                            size="sm"
+                            title="Click to filter by Cap Number"
+                            style={{
+                              color: "#ffc107",
+                              textDecoration: "none",
+                              fontSize: "1em",
+                              padding: "0 0 2px 6px",
+                              verticalAlign: "middle",
+                              cursor: "pointer",
+                            }}
+                          >
+                            🔎
+                          </Button>
+                        </OverlayTrigger>
+                      </th>
+                      <th>
+                        Name{" "}
+                        <OverlayTrigger
+                          trigger="click"
+                          rootClose
+                          placement="bottom"
+                          overlay={
+                            <Tooltip id="tooltip-name-filter">
+                              <input
+                                className="filter-input"
+                                type="text"
+                                placeholder="🔍 Filter..."
+                                value={filters.name}
+                                onChange={(e) =>
+                                  handleFilterChange("name", e.target.value)
+                                }
+                                onClick={(e) => e.stopPropagation()}
+                                style={{
+                                  padding: "8px 10px",
+                                  fontSize: "0.85em",
+                                  backgroundColor: "#2a2a2a",
+                                  color: "#fff",
+                                  border: "2px solid #ffc107",
+                                  borderRadius: "4px",
+                                  outline: "none",
+                                }}
+                              />
+                            </Tooltip>
+                          }
+                        >
+                          <Button
+                            variant="link"
+                            size="sm"
+                            title="Click to filter by Name"
+                            style={{
+                              color: "#ffc107",
+                              textDecoration: "none",
+                              fontSize: "1em",
+                              padding: "0 0 2px 6px",
+                              verticalAlign: "middle",
+                              cursor: "pointer",
+                            }}
+                          >
+                            🔎
+                          </Button>
+                        </OverlayTrigger>
+                      </th>
+                      <th>
+                        Nationality{" "}
+                        <OverlayTrigger
+                          trigger="click"
+                          rootClose
+                          placement="bottom"
+                          overlay={
+                            <Tooltip id="tooltip-nationality-filter">
+                              <input
+                                className="filter-input"
+                                type="text"
+                                placeholder="🔍 Filter..."
+                                value={filters.nationality}
+                                onChange={(e) =>
+                                  handleFilterChange(
+                                    "nationality",
+                                    e.target.value,
+                                  )
+                                }
+                                onClick={(e) => e.stopPropagation()}
+                                style={{
+                                  padding: "8px 10px",
+                                  fontSize: "0.85em",
+                                  backgroundColor: "#2a2a2a",
+                                  color: "#fff",
+                                  border: "2px solid #ffc107",
+                                  borderRadius: "4px",
+                                  outline: "none",
+                                }}
+                              />
+                            </Tooltip>
+                          }
+                        >
+                          <Button
+                            variant="link"
+                            size="sm"
+                            title="Click to filter by Nationality"
+                            style={{
+                              color: "#ffc107",
+                              textDecoration: "none",
+                              fontSize: "1em",
+                              padding: "0 0 2px 6px",
+                              verticalAlign: "middle",
+                              cursor: "pointer",
+                            }}
+                          >
+                            🔎
+                          </Button>
+                        </OverlayTrigger>
+                      </th>
                       <th>Distance</th>
                       <th>Finish Time</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {cat.map((participant, index) => {
+                    {paginatedParticipants.map((participant, index) => {
                       return (
                         <tr key={Math.random()}>
-                          <td key={Math.random()}>{participant.raceNumber}</td>
                           <td key={Math.random()}>{participant.position}</td>
-                          <td key={Math.random()}>{participant.name}</td>
+                          <td key={Math.random()}>{participant.raceNumber}</td>
+                          <td key={Math.random()}>{capitalizeNames(participant.name)}</td>
+                          <td key={Math.random()} style={{ fontSize: "1.5em" }}>
+                            {participant.nationality}
+                          </td>
                           <td key={Math.random()}>{participant.distance}</td>
                           <td key={Math.random()}>{participant.finishTime}</td>
                         </tr>
@@ -956,7 +1474,28 @@ const EventbriteWidget = ({ eventId }) => {
                   </tbody>
                 </Table>
               </div>
-            </Col> */}
+              <div style={{ marginTop: "20px", textAlign: "center" }}>
+                <Button
+                  variant="dark"
+                  disabled={currentPage === 1}
+                  onClick={() => setCurrentPage(currentPage - 1)}
+                  style={{ marginRight: "10px" }}
+                >
+                  Previous
+                </Button>
+                <span style={{ margin: "0 15px", fontSize: "1.1em", color: "#fff" }}>
+                  Page {currentPage} of {totalPages || 1}
+                </span>
+                <Button
+                  variant="dark"
+                  disabled={currentPage === totalPages}
+                  onClick={() => setCurrentPage(currentPage + 1)}
+                  style={{ marginLeft: "10px" }}
+                >
+                  Next
+                </Button>
+              </div>
+            </Col>
           </Row>
         </Row>
       </Container>

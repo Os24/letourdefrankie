@@ -616,7 +616,14 @@ const NextEdition: React.FC = () => {
             <h1 className="custom-title">INICIO DE CARRERA</h1>
             <h1 className="custom-title">
               {" "}
-              <Countdown date={Date.parse("27 Apr 2024 01:00:00 GMT") + 1000} />
+              <Countdown
+                date={Date.parse("27 Apr 2024 01:00:00 GMT") + 1000}
+                renderer={({ days, hours, minutes, seconds }) => (
+                  <span>
+                    {days}D : {hours}HRS : {minutes}MIN : {seconds}SEC
+                  </span>
+                )}
+              />
             </h1>
             <h1 className="custom-title"> INSCRIPCIONES CERRADAS</h1>
           </Row>
