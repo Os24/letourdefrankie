@@ -78,3 +78,22 @@
   align-items: center;
   justify-content: center;
 }
+
+#eventbrite-widget-container {
+  display: flex;
+  justify-content: center;
+}
+
+#eventbrite-widget-container iframe {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  #eventbrite-widget-container {
+    width: 100%;
+  }
+  
+  #eventbrite-widget-container iframe {
+    width: 100% !important;
+  }
+}
