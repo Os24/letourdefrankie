@@ -1474,7 +1474,7 @@ const Ltdf2026: React.FC = () => {
                   </tbody>
                 </Table>
               </div>
-              <div style={{ marginTop: "20px", textAlign: "center" }}>
+              <div className="pagination-controls">
                 <Button
                   variant="dark"
                   disabled={currentPage === 1}

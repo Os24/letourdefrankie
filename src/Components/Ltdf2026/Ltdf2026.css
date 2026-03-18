@@ -27,6 +27,11 @@
   }
 }
 
+.table-container {
+  min-height: 400px;
+  overflow-x: auto;
+}
+
 .table-container table {
   background-color: #f8f9fa;
 }
@@ -63,4 +68,13 @@
 
 .table-container table tbody tr:nth-child(even):hover {
   background-color: #fff3cd;
+}
+
+.pagination-controls {
+  margin-top: 20px;
+  text-align: center;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
