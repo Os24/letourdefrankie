@@ -3,7 +3,7 @@ name: Deploy Website to S3 and CloudFront
 on:
   push:
     branches:
-      - main  # Make sure this matches your default branch name (main or master)
+      - main  # Make sure this matches your default branch
 
 jobs:
   deploy:
@@ -13,26 +13,28 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v4
 
-    # NOTE: Uncomment and adjust these lines if you need to build a framework like React/Vue first
-    # - name: Setup Node.js
-    #   uses: actions/setup-node@v4
-    #   with:
-    #     node-version: '20'
-    # - name: Install Dependencies
-    #   run: npm install
-    # - name: Build Site
-    #   run: npm run build
+    # 1. Added steps to build your React project
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        
+    - name: Install Dependencies
+      run: npm install
+      
+    - name: Build Site
+      run: npm run build
 
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-1 # Important: Change this if your S3 bucket is in a different region
+        aws-region: us-east-1 # Keep your correct region
 
+    # 2. Changed './' to './build' so it only uploads the compiled site
     - name: Sync files to S3 bucket
-      # Important: Change './' to your build output folder (like './dist' or './build') if using a frontend framework
-      run: aws s3 sync ./ s3://${{ secrets.AWS_S3_BUCKET }} --delete
+      run: aws s3 sync ./build s3://${{ secrets.AWS_S3_BUCKET }} --delete
 
     - name: Invalidate CloudFront Cache
       run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_ID }} --paths "/*"
