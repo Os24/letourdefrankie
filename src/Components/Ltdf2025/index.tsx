@@ -832,7 +832,14 @@ const Ltdf2025: React.FC = () => {
             <h1 className="custom-title">INICIO DE CARRERA</h1>
             <h1 className="custom-title">
               {" "}
-              <Countdown date={Date.parse("26 Apr 2025 01:00:00 GMT") + 1000} />
+              <Countdown
+                date={Date.parse("26 Apr 2025 01:00:00 GMT") + 1000}
+                renderer={({ days, hours, minutes, seconds }) => (
+                  <span>
+                    {days}D : {hours}HRS : {minutes}MIN : {seconds}SEC
+                  </span>
+                )}
+              />
             </h1>
             <h1 className="custom-title"> INSCRIPCIONES AGOTADAS</h1>
             <Col className="brevet-btn-container ">
