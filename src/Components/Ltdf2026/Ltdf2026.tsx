@@ -18,11 +18,6 @@ import Countdown from "react-countdown";
 
 import "./Ltdf2026.css";
 
-declare global {
-  interface Window {
-    EBWidgets: any;
-  }
-}
 const Ltdf2026: React.FC = () => {
   const [cat, setCat] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("Femenino");
@@ -33,44 +28,6 @@ const Ltdf2026: React.FC = () => {
   });
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 20;
-
-  const EventbriteWidget = ({ eventId }) => {
-    useEffect(() => {
-      const script = document.createElement("script");
-      script.src = "https://www.eventbrite.com/static/widgets/eb_widgets.js";
-      script.async = true;
-      script.onload = () => {
-        if (window.EBWidgets) {
-          window.EBWidgets.createWidget({
-            widgetType: "checkout",
-            eventId: eventId, // Usa el prop eventId
-            iframeContainerId: "eventbrite-widget-container", // El ID del contenedor
-            iframeContainerHeight: 425,
-            onClose: () => {
-              // Manejar el cierre del widget si es necesario
-              console.log("Eventbrite widget closed");
-            },
-          });
-        }
-      };
-
-      document.body.appendChild(script);
-      // Devuelve la función de limpieza
-      return () => {
-        // Cleanup script when component unmounts
-        document.body.removeChild(script);
-        const container = document.getElementById(
-          "eventbrite-widget-container",
-        );
-        if (container) {
-          container.innerHTML = "";
-        }
-      };
-    }, [eventId]);
-
-    // El return de este componente (fuera del useEffect) es el JSX normal
-    return <div id="eventbrite-widget-container"></div>;
-  };
 
   const maleParticipants = [
     {
@@ -1090,7 +1047,7 @@ const Ltdf2026: React.FC = () => {
       badge: 50,
     },
     {
-      name: "Neftalí Gabriela & Gabriela Mijangos",
+      name: "Neftalí Donato & Gabriela Mijangos",
       raceNumber: "018",
       nationality: "🇲🇽",
       finishTime: "TBD",
@@ -1252,7 +1209,6 @@ const Ltdf2026: React.FC = () => {
               {" "}
               INSCRIPCIONES AGOTADAS
             </h1>
-            <EventbriteWidget eventId={"1970542590935"} />
 {/* 
             <Col className="brevet-btn-container ">
               <Button
@@ -1474,7 +1430,7 @@ const Ltdf2026: React.FC = () => {
                   </tbody>
                 </Table>
               </div>
-              <div style={{ marginTop: "20px", textAlign: "center" }}>
+              <div className="pagination-controls">
                 <Button
                   variant="dark"
                   disabled={currentPage === 1}
