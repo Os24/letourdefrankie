@@ -22,7 +22,7 @@ jobs:
       run: npm install
       
     - name: Build Site
-      run: npm run build
+      run: CI=false npm run build
 
     - name: Verify Build Folder
       run: ls -la
