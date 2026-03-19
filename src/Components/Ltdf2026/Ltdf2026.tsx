@@ -81,7 +81,7 @@ const Ltdf2026: React.FC = () => {
     },
     {
       name: "Marino Spinoza",
-      raceNumber: "08",
+      raceNumber: "42",
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
@@ -235,7 +235,7 @@ const Ltdf2026: React.FC = () => {
     },
     {
       name: "Daniel Jasso Hernández",
-      raceNumber: "33",
+      raceNumber: "83",
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
@@ -291,7 +291,7 @@ const Ltdf2026: React.FC = () => {
     },
     {
       name: "Omar Pulido",
-      raceNumber: "42",
+      raceNumber: "08",
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
@@ -550,7 +550,7 @@ const Ltdf2026: React.FC = () => {
     },
     {
       name: "Abraham González Ruíz",
-      raceNumber: "83",
+      raceNumber: "33",
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
