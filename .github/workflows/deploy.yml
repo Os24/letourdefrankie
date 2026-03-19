@@ -32,7 +32,7 @@ jobs:
 
     - name: Sync files to S3 bucket
       # Important: Change './' to your build output folder (like './dist' or './build') if using a frontend framework
-      run: aws s3 sync ./ s3://${{ secrets.AWS_S3_BUCKET }} --delete
+      run: aws s3 sync ./build s3://${{ secrets.AWS_S3_BUCKET }} --delete
 
     - name: Invalidate CloudFront Cache
       run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_ID }} --paths "/*"
