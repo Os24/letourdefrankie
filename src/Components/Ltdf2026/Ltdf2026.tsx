@@ -80,12 +80,13 @@ const Ltdf2026: React.FC = () => {
       badge: 50,
     },
     {
-      name: "Marino Spinoza",
+      name: "Omar Pulido",
       raceNumber: "08",
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
     },
+
     {
       name: "Emmanuel Guzman",
       raceNumber: "09",
@@ -234,7 +235,7 @@ const Ltdf2026: React.FC = () => {
       badge: 50,
     },
     {
-      name: "Daniel Jasso Hernández",
+      name: "Abraham González Ruíz",
       raceNumber: "33",
       nationality: "🇲🇽",
       finishTime: "TBD",
@@ -290,12 +291,13 @@ const Ltdf2026: React.FC = () => {
       badge: 50,
     },
     {
-      name: "Omar Pulido",
+      name: "Marino Spinoza",
       raceNumber: "42",
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
     },
+
     {
       name: "Doryan salvador Apolinar Callejas López",
       raceNumber: "43",
@@ -549,12 +551,13 @@ const Ltdf2026: React.FC = () => {
       badge: 50,
     },
     {
-      name: "Abraham González Ruíz",
+      name: "Daniel Jasso Hernández",
       raceNumber: "83",
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
     },
+
     {
       name: "Rafael Ospino",
       raceNumber: "84",
@@ -806,7 +809,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
-    }
+    },
   ];
 
   const femaleParticipants = [
@@ -1082,10 +1085,12 @@ const Ltdf2026: React.FC = () => {
       badge: 50,
     },
   ];
-  
+
   useEffect(() => {
     // Load female participants by default
-    const sortedFemaleParticipants = femaleParticipants.sort((a, b) => a.badge - b.badge);
+    const sortedFemaleParticipants = femaleParticipants.sort(
+      (a, b) => a.badge - b.badge,
+    );
     setCat(sortedFemaleParticipants);
   }, []);
 
@@ -1120,7 +1125,10 @@ const Ltdf2026: React.FC = () => {
   const totalPages = Math.ceil(filteredParticipants.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const paginatedParticipants = filteredParticipants.slice(startIndex, endIndex);
+  const paginatedParticipants = filteredParticipants.slice(
+    startIndex,
+    endIndex,
+  );
 
   const handleSelect = (e) => {
     let sortedParticipants = maleParticipants;
@@ -1154,7 +1162,7 @@ const Ltdf2026: React.FC = () => {
   return (
     <div className="brevet-container">
       <Container>
-         <Row>
+        <Row>
           <Col className="flyer-container">
             <Image src={mainImg} />
           </Col>
@@ -1173,7 +1181,10 @@ const Ltdf2026: React.FC = () => {
               src="https://ridewithgps.com/embeds?type=route&id=54284995&metricUnits=true&sampleGraph=true"
               style={{ width: "100%", height: "500px", border: "none" }}
             ></iframe>
-             <Col className="brevet-btn-container " style={{ padding: '20px 0', textAlign: 'center' }}>
+            <Col
+              className="brevet-btn-container "
+              style={{ padding: "20px 0", textAlign: "center" }}
+            >
               <Button
                 href="https://drive.google.com/uc?export=download&id=1A5oy-o643U2hXurJ7rdM783JbTMaSlxG"
                 target="_blank"
@@ -1197,7 +1208,6 @@ const Ltdf2026: React.FC = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               ></iframe>
             </div>
-           
           </Row>
           <Row>
             <h1 className="custom-title">INICIO DE CARRERA</h1>
@@ -1212,11 +1222,8 @@ const Ltdf2026: React.FC = () => {
                 )}
               />
             </h1>
-            <h1 className="custom-title">
-              {" "}
-              INSCRIPCIONES AGOTADAS
-            </h1>
-{/* 
+            <h1 className="custom-title"> INSCRIPCIONES AGOTADAS</h1>
+            {/* 
             <Col className="brevet-btn-container ">
               <Button
                 href="https://www.eventbrite.com.mx/e/le-tour-de-frankie-el-infierno-del-sur-2026-tickets-1970542590935?aff=oddtdtcreator"
@@ -1232,7 +1239,14 @@ const Ltdf2026: React.FC = () => {
             <Col>
               {" "}
               <h1 className="custom-title">LISTA DE CORREDORES</h1>
-              <p style={{ fontSize: "1.1em", fontWeight: "bold", marginBottom: "10px", color: "#fff" }}>
+              <p
+                style={{
+                  fontSize: "1.1em",
+                  fontWeight: "bold",
+                  marginBottom: "10px",
+                  color: "#fff",
+                }}
+              >
                 Categoría:
               </p>
               <div className="btn-container">
@@ -1425,7 +1439,9 @@ const Ltdf2026: React.FC = () => {
                         <tr key={Math.random()}>
                           <td key={Math.random()}>{participant.position}</td>
                           <td key={Math.random()}>{participant.raceNumber}</td>
-                          <td key={Math.random()}>{capitalizeNames(participant.name)}</td>
+                          <td key={Math.random()}>
+                            {capitalizeNames(participant.name)}
+                          </td>
                           <td key={Math.random()} style={{ fontSize: "1.5em" }}>
                             {participant.nationality}
                           </td>
@@ -1446,7 +1462,9 @@ const Ltdf2026: React.FC = () => {
                 >
                   Previous
                 </Button>
-                <span style={{ margin: "0 15px", fontSize: "1.1em", color: "#fff" }}>
+                <span
+                  style={{ margin: "0 15px", fontSize: "1.1em", color: "#fff" }}
+                >
                   Page {currentPage} of {totalPages || 1}
                 </span>
                 <Button
