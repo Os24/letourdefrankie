@@ -810,6 +810,13 @@ const Ltdf2026: React.FC = () => {
       finishTime: "TBD",
       badge: 50,
     },
+    {
+      name: "Devin Armstrong",
+      raceNumber: "127",
+      nationality: "🇺🇸",
+      finishTime: "TBD",
+      badge: 50,
+    },
   ];
 
   const femaleParticipants = [

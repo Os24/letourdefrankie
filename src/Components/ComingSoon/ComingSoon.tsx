@@ -7,7 +7,7 @@ import CustomCarousel from "../Carousel/Carousel";
 const Comingsoon: React.FC = () => {
   return (
     <>
-      <div className="main-container">
+      {/* <div className="main-container">
         <div className="logo-container">
           <iframe
             style={{ width: "1900px", height: "800px", border: "none" }}
@@ -16,7 +16,7 @@ const Comingsoon: React.FC = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           ></iframe>
         </div>
-      </div>
+      </div> */}
       <Sponsors />
       <CustomCarousel />
     </>

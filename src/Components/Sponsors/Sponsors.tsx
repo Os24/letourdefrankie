@@ -15,7 +15,10 @@ import orbeaLogo from "../../images/orbea.svg";
 import cushCoreLogo from "../../images/cushcore.svg";
 import fmcLogo from "../../images/fmcOne.png";
 import tentenpieLogo from "../../images/tentenpie.png";
-import whlkngsLogo from "../../images/thewheelkngs.svg"
+import whlkngsLogo from "../../images/thewheelkngs.svg";
+import ltdfOrbeaLogo from "../../images/ltdfOrbea.svg";
+import ravenLogo from "../../images/raven.svg";
+import hutchinsonLogo from "../../images/hutchinson.svg";
 
 import "./Sponsors.css";
 
@@ -24,9 +27,17 @@ const Sponsors: React.FC = () => {
     <Container className="sponsors-container" fluid>
       <Row style={{ marginBottom: 20 }}>
         <div className="sponsors-title">
-          <h6>#LETOURDEFRANKIE</h6>
           <h2>FIRST UNASSISTED ULTRA CYCLING RACE IN MEXICO</h2>
         </div>
+      </Row>
+      <Row style={{ marginBottom: 20 }}>
+        <Col className="d-flex justify-content-center align-items-center">
+          <img
+            src={ltdfOrbeaLogo}
+            alt="ltdf-orbea"
+            style={{ maxWidth: "100%", height: "auto", maxHeight: "300px" }}
+          />
+        </Col>
       </Row>
       <Row style={{ marginBottom: 20 }}>
         <Col className="d-none d-lg-block"></Col>
@@ -39,37 +50,37 @@ const Sponsors: React.FC = () => {
           <img src={stansLogo} alt="stans-mx" />
         </Col>
         <Col className="named-sport-logo">
-          <img  src={orbeaLogo} alt="orbea" />
+          <img src={hutchinsonLogo} alt="hutchinson" />
         </Col>
         <Col className="named-sport-logo">
-          <img  src={cushCoreLogo} alt="cushCore" />
+          <img src={ravenLogo} alt="raven" />
         </Col>
 
-        {/* <Col className="logo">
-          <img src={gangLogo} alt="thegang" />
-        </Col>
         <Col className="logo">
+          <img src={tentenpieLogo} alt="tentenpie" />
+        </Col>
+        {/* <Col className="logo">
           <img src={enbiciadosLogo} alt="thegang" />
         </Col> */}
         <Col className="d-none d-lg-block"></Col>
         <Col className="d-none d-lg-block"></Col>
       </Row>
       <Row style={{ marginBottom: 20 }}>
-        <Col className="silver-logo">
-          <img src={albaOpticsLogo} alt="albaoptics" />
-        </Col>
+        {/* <Col className="silver-logo">
+          <img src={hutchinsonLogo} alt="hutchinson" />
+        </Col> */}
         <Col className="silver-logo">
           <img src={bombardiersLogo} alt="bombardiers" />
         </Col>
         <Col className="silver-logo">
           <img src={fmcLogo} alt="fmc" />
         </Col>
-        <Col className="silver-logo">
+        {/* <Col className="silver-logo">
           <img src={whlkngsLogo} alt="wheelkings" />
-        </Col>
-        <Col className="silver-logo" >
+        </Col> */}
+        {/* <Col className="silver-logo" >
           <img style={{width:100}} src={tentenpieLogo} alt="tentenpie" />
-        </Col>
+        </Col> */}
         <Col className="silver-logo">
           <img src={terremotoLogo} alt="terremotoCrew" />
         </Col>
@@ -88,11 +99,11 @@ const Sponsors: React.FC = () => {
         <Col className="silver-logo">
           <img src={chaakLogo} alt="cbd" />
         </Col> */}
-        <Col className="silver-logo">
+        {/* <Col className="silver-logo">
           <img src={bikepantlaLogo} alt="bikePhomet" />
         </Col>
-        {/* <Col className="silver-logo">
-          <img src={tempeLogo} alt="bikePhomet" />
+        <Col className="silver-logo">
+          <img src={ravenLogo} alt="raven" />
         </Col> */}
       </Row>
     </Container>
