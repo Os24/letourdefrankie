@@ -33,9 +33,9 @@ function MainMenu() {
             <LinkContainer to="/ltdf-2026">
               <Nav.Link>LTDF 2026</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/brevet-2025">
+            {/* <LinkContainer to="/brevet-2025">
               <Nav.Link>BREVET 2025</Nav.Link>
-            </LinkContainer>
+            </LinkContainer> */}
             {/* <LinkContainer to="/MapRoute">
               <Nav.Link>ROUTE</Nav.Link>
             </LinkContainer> */}
@@ -57,6 +57,9 @@ function MainMenu() {
               </LinkContainer>
               <LinkContainer to="/brevet">
                 <Nav.Link>BREVET 2023</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/brevet-2025">
+                <Nav.Link>BREVET 2025</Nav.Link>
               </LinkContainer>
               {/* <NavDropdown.Item href="#action4">
                 Another action
