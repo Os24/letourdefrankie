@@ -817,6 +817,20 @@ const Ltdf2026: React.FC = () => {
       finishTime: "TBD",
       badge: 50,
     },
+    {
+      name: "Ignacio Pelayo",
+      raceNumber: "128",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+    {
+      name: "Fernando Monjaraz",
+      raceNumber: "129",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
   ];
 
   const femaleParticipants = [
