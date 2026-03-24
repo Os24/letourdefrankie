@@ -63,8 +63,8 @@ const Rules: React.FC = () => {
               para tu viaje, etc ).
             </li>
             <li>
-              Fecha de salida sabado 26 de abril 01:00 Hrs, tiempo límite para
-              concluir la ruta miercoles 1 de mayo 11:00 Hrs (130 horas)
+              Fecha de salida sabado 25 de abril 01:00 Hrs, tiempo límite para
+              concluir la ruta jueves 30 de abril 11:00 Hrs (130 horas)
             </li>
             <li>
               Es OBLIGATORIO seguir la ruta oficial compartida en todo momento,
@@ -174,21 +174,21 @@ const Rules: React.FC = () => {
             </Modal.Header>
             <Modal.Body>
               <ol style={{ listStyle: "none" }}>
-                <li>Salida Sabado 26 de Abril 2025 1:00 am</li>
-                <li>Checkpoint 1 km 97 (Paso de Cortes) 26 de Abril 2025 3:00 pm</li>
+                <li>Salida Zocalo de la Ciudad de Mexico Sabado 25 de Abril 2026 1:00 am</li>
+                <li>Checkpoint 1 km 97 (Paso de Cortes 19.0862956, -98.6469329) 25 de Abril 2026 1:00 pm</li>
                 <li>
-                  Checkpoint 2 km 181(San Juan Epatlan) 26 de Abril 2025 9:00 pm
+                  Checkpoint 2 km 181(San Juan Epatlan 18.6416994, -98.3700210) 25 de Abril 2026 5:00 pm
                 </li>
                 <li>
-                  Checkpoint 3 km 310.2(Acatlan de Osorio) 28 de Abril 2025 10:00 am
+                  Checkpoint 3 km 310.2(Acatlan de Osorio 18.2072776, -98.0487698) 26 de Abril 2026 11:59 pm
                 </li>
                 <li>
-                  Checkpoint 4  km 519(Hotel Paraiso, Chalcatongo de Hidalgo) 29 de Abril 2025 6:00 pm
+                  Checkpoint 4  km 519(Hotel Paraiso, Chalcatongo de Hidalgo 17.0301958, -97.5704806) 28 de Abril 2026 4:00 pm
                 </li>
                 <li>
-                  Checkpoint 5  km 612(Casa Toronjiles, Santiago Ixtayutla ) 30 de Abril 2025 6:00 pm
+                  Checkpoint 5  km 612(Casa Toronjiles 16.5890763, -97.6542671, Santiago Ixtayutla ) 29 de Abril 2026 6:00 pm
                 </li>
-                <li>Meta (Puerto Escondido) 1 de Mayo 2025 11:00 am</li>
+                <li>Meta (Tlachiquero pulques Finos 15.83320809875156, -97.04331974732197,Puerto Escondido)30 de Abril 2026 11:00 am</li>
               </ol>
             </Modal.Body>
           </Modal>
@@ -236,8 +236,8 @@ const Rules: React.FC = () => {
               tape, everything you think necessary for your trip, etc).
             </li>
             <li>
-              Departure date Saturday April 26 01:00 Hrs, time limit for
-              conclude the route Wednesday, May 1 11:00 Hrs (130 hours)
+              Departure date Saturday April 25 01:00 Hrs, time limit for
+              conclude the route Thursday, April  30 11:00 Hrs (130 hours)
             </li>
             <li>
               It is MANDATORY to follow the offical shared route at all times,
@@ -342,21 +342,21 @@ const Rules: React.FC = () => {
             </Modal.Header>
             <Modal.Body>
               <ol style={{ listStyle: "none" }}>
-              <li>Start Sabado 26 de Abril 2025 1:00 am</li>
-                <li>Checkpoint 1 km 97 (Paso de Cortes) 26 de Abril 2025 3:00 pm</li>
+              <li>Start Zocalo de la Ciudad de Mexico Sabado 25 de Abril 2026 1:00 am</li>
+                <li>Checkpoint 1 km 97 (Paso de Cortes 19.0862956, -98.6469329) 25 de Abril 2026 1:00 pm</li>
                 <li>
-                  Checkpoint 2 km 181(San Juan Epatlan) 26 de Abril 2025 9:00 pm
+                  Checkpoint 2 km 181(San Juan Epatlan 18.6416994, -98.3700210) 25 de Abril 2026 5:00 pm
                 </li>
                 <li>
-                  Checkpoint 3 km 310.2(Acatlan de Osorio) 28 de Abril 2025 10:00 am
+                  Checkpoint 3 km 310.2(Acatlan de Osorio 18.2072776, -98.0487698) 26 de Abril 2026 11:59 pm
                 </li>
                 <li>
-                  Checkpoint 4  km 519(Hotel Paraiso, Chalcatongo de Hidalgo) 29 de Abril 2025 6:00 pm
+                  Checkpoint 4  km 519(Hotel Paraiso, Chalcatongo de Hidalgo 17.0301958, -97.5704806) 28 de Abril 2026 4:00 pm
                 </li>
                 <li>
-                  Checkpoint 5  km 612(Casa Toronjiles, Santiago Ixtayutla ) 30 de Abril 2025 6:00 pm
+                  Checkpoint 5  km 612(Casa Toronjiles 16.5890763, -97.6542671, Santiago Ixtayutla ) 29 de Abril 2026 6:00 pm
                 </li>
-                <li>Meta (Puerto Escondido) 1 de Mayo 2025 11:00 am</li>
+                <li>Meta (Tlachiquero pulques Finos 15.83320809875156, -97.04331974732197,Puerto Escondido)30 de Abril 2026 11:00 am</li>
               </ol>
             </Modal.Body>
           </Modal>
