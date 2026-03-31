@@ -7,7 +7,7 @@ const Rules: React.FC = () => {
   const [smShowEng, setSmShowEng] = useState(false);
 
   return (
-    <div className="rules-container">
+    <div className="rules-container" style={{ overflowX: "hidden" }}>
       <Row>
         <Col style={{ textAlign: "right" }}>
           <Button
@@ -72,7 +72,7 @@ const Rules: React.FC = () => {
               punto donde te desviaste.
               <br />
               <a
-                href="https://drive.google.com/uc?export=download&id=1fwMN3tPQNn1o_cbpmsOLWNFYm3PTB_a3"
+                href="https://drive.google.com/uc?export=download&id=1A5oy-o643U2hXurJ7rdM783JbTMaSlxG"
                 target="_blank"
               >
                 Descargar Ruta
@@ -245,7 +245,7 @@ const Rules: React.FC = () => {
               where you deviated.
               <br />
               <a
-                href="https://drive.google.com/file/d/1g9QYPQAF3BJJ3ZZd7q7wT0YPPovAFFyO/view?usp=share_link"
+                href="https://drive.google.com/uc?export=download&id=1A5oy-o643U2hXurJ7rdM783JbTMaSlxG"
                 target="_blank"
               >
                 Download Route
