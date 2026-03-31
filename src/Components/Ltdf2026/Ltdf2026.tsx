@@ -396,6 +396,13 @@ const Ltdf2026: React.FC = () => {
       finishTime: "TBD",
       badge: 50,
     },
+     {
+      name: "Angel Padilla Contreras",
+      raceNumber: "60",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
     {
       name: "Carlos Vazquez",
       raceNumber: "61",
@@ -884,13 +891,6 @@ const Ltdf2026: React.FC = () => {
       badge: 50,
     },
     {
-      name: "Carol Aylin",
-      raceNumber: "60",
-      nationality: "🇲🇽",
-      finishTime: "TBD",
-      badge: 50,
-    },
-    {
       name: "Bren Zamora",
       raceNumber: "102",
       nationality: "🇲🇽",
@@ -1259,18 +1259,23 @@ const Ltdf2026: React.FC = () => {
           <Row>
             <Col>
               {" "}
-              <h1 className="custom-title">LISTA DE CORREDORES</h1>
+              <h1 className="custom-title" style={{ textAlign: "left" }}>
+                LISTA DE CORREDORES
+              </h1>
               <p
                 style={{
                   fontSize: "1.1em",
                   fontWeight: "bold",
                   marginBottom: "10px",
+                  marginTop: "20px",
                   color: "#fff",
+                  textAlign: "left",
+                  marginLeft: "0",
                 }}
               >
                 Categoría:
               </p>
-              <div className="btn-container">
+              <div className="btn-container" style={{ justifyContent: "flex-start", marginLeft: "0", paddingLeft: "0" }}>
                 <DropdownButton
                   title={selectedCategory}
                   id="dropdown-menu-align-right"
