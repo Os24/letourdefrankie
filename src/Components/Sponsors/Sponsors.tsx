@@ -55,9 +55,12 @@ const Sponsors: React.FC = () => {
         <Col className="named-sport-logo">
           <img src={ravenLogo} alt="raven" />
         </Col>
-
+    
         <Col className="logo">
           <img src={tentenpieLogo} alt="tentenpie" />
+        </Col>
+          <Col className="named-sport-logo">
+          <img className="alba-logo" src={albaOpticsLogo} alt="albaOptics" />
         </Col>
         {/* <Col className="logo">
           <img src={enbiciadosLogo} alt="thegang" />
