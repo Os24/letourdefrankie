@@ -137,13 +137,6 @@ const Ltdf2026: React.FC = () => {
       badge: 50,
     },
     {
-      name: "Sergio Krasowsky",
-      raceNumber: "16",
-      nationality: "🇲🇽",
-      finishTime: "TBD",
-      badge: 50,
-    },
-    {
       name: "Luis Orozco Sanchez",
       raceNumber: "17",
       nationality: "🇺🇸",
@@ -834,6 +827,13 @@ const Ltdf2026: React.FC = () => {
     {
       name: "Fernando Monjaraz",
       raceNumber: "129",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
+      {
+      name: "Arturo Hugo Garcia Garcia",
+      raceNumber: "130",
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
