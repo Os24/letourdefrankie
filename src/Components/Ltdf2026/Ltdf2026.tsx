@@ -837,6 +837,13 @@ const Ltdf2026: React.FC = () => {
       finishTime: "TBD",
       badge: 50,
     },
+      {
+      name: "Neftali Donato",
+      raceNumber: "130",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+    },
   ];
 
   const femaleParticipants = [
