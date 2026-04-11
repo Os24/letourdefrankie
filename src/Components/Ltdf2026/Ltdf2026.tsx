@@ -15,7 +15,6 @@ import {
 } from "react-bootstrap";
 import mainImg from "../../../src/images/flyer2026ltdf.jpg";
 import Countdown from "react-countdown";
-
 import "./Ltdf2026.css";
 
 const Ltdf2026: React.FC = () => {
@@ -1073,13 +1072,6 @@ const Ltdf2026: React.FC = () => {
     {
       name: "Daniel Zapata & Andrés Cervantes",
       raceNumber: "018",
-      nationality: "🇲🇽",
-      finishTime: "TBD",
-      badge: 50,
-    },
-    {
-      name: "Neftalí Donato & Gabriela Mijangos",
-      raceNumber: "019",
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,

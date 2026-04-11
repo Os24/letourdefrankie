@@ -174,7 +174,7 @@ const Rules: React.FC = () => {
             </Modal.Header>
             <Modal.Body>
               <ol style={{ listStyle: "none" }}>
-                <li>Salida Zocalo de la Ciudad de Mexico Sabado 25 de Abril 2026 1:00 am</li>
+                <li>Salida Monumento a la Revolucion CDMX (19.4405885730065, -99.1546496052005) 25 de Abril 2026 1:00 am</li>
                 <li>Checkpoint 1 km 97 (Paso de Cortes 19.0862956, -98.6469329) 25 de Abril 2026 1:00 pm</li>
                 <li>
                   Checkpoint 2 km 181(San Juan Epatlan 18.6416994, -98.3700210) 25 de Abril 2026 5:00 pm
@@ -342,7 +342,7 @@ const Rules: React.FC = () => {
             </Modal.Header>
             <Modal.Body>
               <ol style={{ listStyle: "none" }}>
-              <li>Start Zocalo de la Ciudad de Mexico Sabado 25 de Abril 2026 1:00 am</li>
+              <li>Start Monumento a la Revolucion CDMX Sabado 25 de Abril 2026 1:00 am</li>
                 <li>Checkpoint 1 km 97 (Paso de Cortes 19.0862956, -98.6469329) 25 de Abril 2026 1:00 pm</li>
                 <li>
                   Checkpoint 2 km 181(San Juan Epatlan 18.6416994, -98.3700210) 25 de Abril 2026 5:00 pm
