@@ -42,6 +42,9 @@ function MainMenu() {
             <LinkContainer to="/Rules">
               <Nav.Link>RULES</Nav.Link>
             </LinkContainer>
+            <LinkContainer to="/privacy-policy">
+              <Nav.Link>PRIVACY POLICY</Nav.Link>
+            </LinkContainer>
             {/* <LinkContainer to="/Brevet">
               <Nav.Link>BREVET</Nav.Link>
             </LinkContainer> */}
