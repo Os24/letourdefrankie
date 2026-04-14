@@ -27,10 +27,6 @@ const PrivacyPolicy = () => {
             <strong>Datos Sensibles (Salud):</strong> Tipo de sangre, alergias y
             condiciones médicas relevantes.
           </li>
-          <li>
-            <strong>Fiscales:</strong> RFC y domicilio para fines de
-            facturación.
-          </li>
         </ul>
       </p>
       <p>
