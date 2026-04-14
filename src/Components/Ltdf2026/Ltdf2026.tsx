@@ -269,7 +269,7 @@ const Ltdf2026: React.FC = () => {
       badge: 50,
     },
     {
-      name: "Ernesto Cano arguelles",
+      name: "Will Hays Penner",
       raceNumber: "40",
       nationality: "🇺🇸",
       finishTime: "TBD",
