@@ -1198,7 +1198,7 @@ const Ltdf2026: React.FC = () => {
           <Row>
             <h1 className="custom-title">RUTA</h1>
             <iframe
-              src="https://ridewithgps.com/embeds?type=route&id=54529374&metricUnits=true&sampleGraph=true"
+              src="https://ridewithgps.com/embeds?type=route&id=54701137&metricUnits=true&sampleGraph=true"
               style={{ width: "100%", height: "500px", border: "none" }}
             ></iframe>
             <Col
@@ -1206,7 +1206,7 @@ const Ltdf2026: React.FC = () => {
               style={{ padding: "20px 0", textAlign: "center" }}
             >
               <Button
-                href="https://drive.google.com/uc?export=download&id=1fKQ6OgJHSbFHnW6J-im_tc1Fe3KK4vQo"
+                href="https://drive.google.com/uc?export=download&id=1q09gL-LSvlfB55fCpxcRREUXrEHqGqlf"
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="dark"
