@@ -72,7 +72,7 @@ const Rules: React.FC = () => {
               punto donde te desviaste.
               <br />
               <a
-                href="https://drive.google.com/uc?export=download&id=1fKQ6OgJHSbFHnW6J-im_tc1Fe3KK4vQo"
+                href="https://drive.google.com/uc?export=download&id=1q09gL-LSvlfB55fCpxcRREUXrEHqGqlf"
                 target="_blank"
               >
                 Descargar Ruta
@@ -245,7 +245,7 @@ const Rules: React.FC = () => {
               where you deviated.
               <br />
               <a
-                href="https://drive.google.com/uc?export=download&id=1fKQ6OgJHSbFHnW6J-im_tc1Fe3KK4vQo"
+                href="https://drive.google.com/uc?export=download&id=1q09gL-LSvlfB55fCpxcRREUXrEHqGqlf"
                 target="_blank"
               >
                 Download Route
