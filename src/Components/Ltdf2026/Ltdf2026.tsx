@@ -35,6 +35,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Drang By Olympica'
     },
     {
       name: "Daniel Marques",
@@ -42,6 +43,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇧🇷",
       finishTime: "TBD",
       badge: 50,
+      team:'Forneiro'
     },
     {
       name: "Francisco Garcia",
@@ -56,6 +58,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'velociraptors2'
     },
     {
       name: "Jose Rogelio Covarrubias cardenas",
@@ -63,6 +66,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'313'
     },
     {
       name: "Fernando Jimenez",
@@ -92,6 +96,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Legends of Gravel'
     },
     {
       name: "Luis Villedas",
@@ -134,6 +139,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'The Bikes Society'
     },
     {
       name: "Luis Orozco Sanchez",
@@ -141,6 +147,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇺🇸",
       finishTime: "TBD",
       badge: 50,
+      team:'afaic'
     },
     {
       name: "Gerardo Carrillo",
@@ -148,6 +155,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team: "OUTDOORFINS"
     },
     {
       name: "Esteban Flores Montero",
@@ -155,6 +163,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team: 'Ghostbikers'
     },
     {
       name: "Christopher Chavez",
@@ -162,6 +171,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'SBS Endurance Training'
     },
     {
       name: "Nicholas Tornambe",
@@ -190,6 +200,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Offseason CC'
     },
     {
       name: "José Guillermo Femat Zarazúa",
@@ -197,6 +208,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Bike Fit MX'
     },
     {
       name: "Erick Hernandez Guerrero",
@@ -211,6 +223,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team: 'Road Bike Tlana Team'
     },
     {
       name: "Patricio Rodríguez",
@@ -218,6 +231,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Pato Rodríguez'
     },
     {
       name: "Francisco Michell Salinas González",
@@ -225,6 +239,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Legends of Gravel'
     },
     {
       name: "Abraham González Ruíz",
@@ -232,6 +247,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'OAXACA'
     },
     {
       name: "GIBRÁN NANDÍ AYALA",
@@ -239,6 +255,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'EVO4Tri'
     },
     {
       name: "Brian Baird",
@@ -267,6 +284,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Fuga México'
     },
     {
       name: "Will Hays Penner",
@@ -274,6 +292,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇺🇸",
       finishTime: "TBD",
       badge: 50,
+      team:'La Routine'
     },
     {
       name: "david berumen",
@@ -281,6 +300,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Berumen'
     },
     {
       name: "Marino Spinoza",
@@ -288,6 +308,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team: 'Laniakea Pro-Cycling Team'
     },
 
     {
@@ -296,6 +317,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'LA BOVEDA RACING TEAM'
     },
     {
       name: "Iván Iglesias Martinez",
@@ -303,6 +325,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Tlalocan Bikes'
     },
     {
       name: "Sergio Aponte",
@@ -317,6 +340,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Enbiciados'
     },
     {
       name: "DONALDO RAMOS",
@@ -324,6 +348,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'CORNICHE CYCLING CLUB'
     },
     {
       name: "Jesús Estrada",
@@ -338,6 +363,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇨🇴",
       finishTime: "TBD",
       badge: 50,
+      team:'Mendiz'
     },
     {
       name: "ELLIOT LEVI RAMOS SALDAÑA",
@@ -366,6 +392,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Bikes Rides & fun'
     },
     {
       name: "Ricardo Arista Mejía",
@@ -380,6 +407,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'alebrijes de puerto escondido'
     },
     {
       name: "Ethan Weir",
@@ -394,6 +422,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Rodaditas Trucutru'
     },
     {
       name: "Carlos Vazquez",
@@ -408,6 +437,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team: 'PanaRac1ng'
     },
     {
       name: "Reid Passmore",
@@ -450,6 +480,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team: 'checos team'
     },
     {
       name: "Brian Elander",
@@ -457,6 +488,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇺🇸",
       finishTime: "TBD",
       badge: 50,
+      team:'Dawn to Dusk MTB'
     },
     {
       name: "Miguel Ángel Huesca García",
@@ -471,6 +503,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Team tmpo'
     },
     {
       name: "Francisco javier Luna Vazquez",
@@ -492,6 +525,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Faro Indio Verdes'
     },
     {
       name: "Ulises Jimenez Alfaro",
@@ -499,6 +533,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Desterrados'
     },
     {
       name: "Raul McPalm",
@@ -520,6 +555,8 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'VAN REZIO'
+      
     },
     {
       name: "Carlos Bala",
@@ -527,6 +564,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Bala'
     },
     {
       name: "Enrique Sandoval",
@@ -541,6 +579,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'ANDRES CADA'
     },
     {
       name: "Daniel Alberto Medina Leon",
@@ -563,6 +602,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇨🇴",
       finishTime: "TBD",
       badge: 50,
+      team:'3Puertos Gravel'
     },
     {
       name: "Antonio Jesús",
@@ -570,6 +610,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'San Pancho'
     },
     {
       name: "Christian Ivan Rodríguez Vences",
@@ -584,6 +625,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'VAN REZIO'
     },
     {
       name: "Miguel Martínez",
@@ -605,6 +647,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'BRF'
     },
     {
       name: "Ernesto Vidal Flores",
@@ -619,6 +662,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Legends of gravel'
     },
     {
       name: "Angel Zetina",
@@ -633,6 +677,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'TBS Team'
     },
     {
       name: "Federico Arturo León Solis",
@@ -640,6 +685,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Octavo Valle'
     },
     {
       name: "Juan Javier Martinez Garmendia",
@@ -647,6 +693,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:"BTCk"
     },
     {
       name: "Brad Sutton",
@@ -654,6 +701,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇺🇸",
       finishTime: "TBD",
       badge: 50,
+      team:'Velopizza'
     },
     {
       name: "Alejandro Garduño",
@@ -668,6 +716,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'RaddaR'
     },
     {
       name: "Gustavo Ruiz",
@@ -689,6 +738,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team: 'Drang By Olympica'
     },
     {
       name: "Luis Jorge Rivera Pérez",
@@ -703,6 +753,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Maxxis By Ciclopolis'
     },
     {
       name: "Mauricio García Rocha",
@@ -724,6 +775,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Roma Cibrian'
     },
     {
       name: "Jorge Edmundo Alvarado Torres",
@@ -731,6 +783,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'City Renewables / State Bicycle Co.'
     },
     {
       name: "Rodrigo Moreno",
@@ -752,6 +805,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:"Centro Ciclistico Marroquino-Armored"
     },
     {
       name: "Omar Olivares",
@@ -780,6 +834,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team: 'Drang by Olympica'
     },
     {
       name: "JUAN HERNANDEZ",
@@ -801,6 +856,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Gravel Mafia'
     },
     {
       name: "Javier Chavez",
@@ -815,6 +871,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇺🇸",
       finishTime: "TBD",
       badge: 50,
+      team:"As Far As I'm Concerned"
     },
     {
       name: "Ignacio Pelayo",
@@ -829,6 +886,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'MYBICIO'
     },
       {
       name: "Arturo Hugo Garcia Garcia",
@@ -836,6 +894,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'MTB CANCUN RIVIERA MAYA'
     },
       {
       name: "Neftali Donato",
@@ -843,6 +902,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'ÓVELPAA Team'
     },
   ];
 
@@ -853,6 +913,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Legends of gravel'
     },
     {
       name: "Grisell Olivia Cruz Navarro",
@@ -867,6 +928,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Sbs Endurance Training'
     },
     {
       name: "Elda Guzman Morales",
@@ -881,6 +943,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Gravel Mafia'
     },
     {
       name: "Ana Saucedo",
@@ -888,6 +951,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Legends of gravel'
     },
     {
       name: "PAULA XIMENA Zenteno Arvizu",
@@ -909,6 +973,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Experimental Bikepacking Team'
     },
     {
       name: "Diana Gutierrez",
@@ -916,6 +981,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Fem Ilegal'
     },
     {
       name: "Maria Fernanda Pacheco",
@@ -923,6 +989,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Fem Ilegal'
     },
     {
       name: "Zaira Contreras Escamilla",
@@ -930,6 +997,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Fem Ilegal'
     },
     {
       name: "Siomara Gama",
@@ -937,6 +1005,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Maxxis By Ciclopolis'
     },
     {
       name: "Karla Alejandra Martínez Suro",
@@ -963,6 +1032,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Emmitt y Nelson'
     },
     {
       name: "German Fernandez & Sayeg Gomez",
@@ -970,6 +1040,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Gravel Mafia'
     },
     {
       name: "Alejandro Maya & Liliana Lizette Castañeda",
@@ -977,6 +1048,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'IDEISTA'
     },
     {
       name: "Jesús Leyva & Yazmin Solano",
@@ -1019,6 +1091,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Pura Fe'
     },
     {
       name: "Fernando Alan Perez & Gustavo Serrano",
@@ -1026,6 +1099,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Enbiciados'
     },
     {
       name: "Diego Velázquez & Miguel Sanson",
@@ -1040,6 +1114,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Mamba cycling'
     },
     {
       name: "Felipe de Jesus Cebada & Adan Montaño",
@@ -1061,6 +1136,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Humble Bikers'
     },
     {
       name: "Noe Delgadillo & Daniel Salas Pérez",
@@ -1068,6 +1144,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'ND (ULTRA GRAVEL)'
     },
     {
       name: "Francisco Zamarripa & Marcos Gerardo Franco",
@@ -1075,6 +1152,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Faro Indios verdes'
     },
     {
       name: "Daniel Zapata & Andrés Cervantes",
@@ -1082,6 +1160,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Bicibandidos'
     },
     {
       name: "Emmanuel López & Erick Alberto Mendiola",
@@ -1089,6 +1168,7 @@ const Ltdf2026: React.FC = () => {
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
+      team:'Tierrero Maxxis x Ciclopolis'
     },
     {
       name: "David Esau Franco & Luis Felipe Alvarez",
@@ -1404,6 +1484,7 @@ const Ltdf2026: React.FC = () => {
                           </Button>
                         </OverlayTrigger>
                       </th>
+                      <th>Team</th>
                       <th>
                         Nationality{" "}
                         <OverlayTrigger
@@ -1467,6 +1548,7 @@ const Ltdf2026: React.FC = () => {
                           <td key={Math.random()}>
                             {capitalizeNames(participant.name)}
                           </td>
+                          <td key={Math.random()}>{participant.team || '--'}</td>
                           <td key={Math.random()} style={{ fontSize: "1.5em" }}>
                             {participant.nationality}
                           </td>
