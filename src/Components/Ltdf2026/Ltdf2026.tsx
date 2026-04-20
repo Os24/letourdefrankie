@@ -733,14 +733,6 @@ const Ltdf2026: React.FC = () => {
       badge: 50,
     },
     {
-      name: "Héctor Castillo",
-      raceNumber: "104",
-      nationality: "🇲🇽",
-      finishTime: "TBD",
-      badge: 50,
-      team: 'Drang By Olympica'
-    },
-    {
       name: "Luis Jorge Rivera Pérez",
       raceNumber: "105",
       nationality: "🇲🇽",
@@ -944,14 +936,6 @@ const Ltdf2026: React.FC = () => {
       finishTime: "TBD",
       badge: 50,
       team:'Gravel Mafia'
-    },
-    {
-      name: "Ana Saucedo",
-      raceNumber: "57",
-      nationality: "🇲🇽",
-      finishTime: "TBD",
-      badge: 50,
-      team:'Legends of gravel'
     },
     {
       name: "PAULA XIMENA Zenteno Arvizu",
@@ -1184,6 +1168,14 @@ const Ltdf2026: React.FC = () => {
       finishTime: "TBD",
       badge: 50,
     },
+    {
+       name: "Hector Castillo & Ana Saucedo",
+      raceNumber: "023",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+
+    }
   ];
 
   useEffect(() => {
