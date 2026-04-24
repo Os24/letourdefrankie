@@ -410,6 +410,14 @@ const Ltdf2026: React.FC = () => {
       team:'alebrijes de puerto escondido'
     },
     {
+      name: "Ethan Frankel",
+      raceNumber: "57",
+      nationality: "🇺🇸",
+      finishTime: "TBD",
+      badge: 50,
+      team:''
+    },
+    {
       name: "Ethan Weir",
       raceNumber: "59",
       nationality: "🇺🇸",
@@ -446,8 +454,8 @@ const Ltdf2026: React.FC = () => {
       finishTime: "TBD",
       badge: 50,
     },
-    {
-      name: "Alfredo Morón",
+   {
+      name: "Ignacio Pelayo",
       raceNumber: "64",
       nationality: "🇲🇽",
       finishTime: "TBD",
@@ -733,14 +741,6 @@ const Ltdf2026: React.FC = () => {
       badge: 50,
     },
     {
-      name: "Héctor Castillo",
-      raceNumber: "104",
-      nationality: "🇲🇽",
-      finishTime: "TBD",
-      badge: 50,
-      team: 'Drang By Olympica'
-    },
-    {
       name: "Luis Jorge Rivera Pérez",
       raceNumber: "105",
       nationality: "🇲🇽",
@@ -873,16 +873,10 @@ const Ltdf2026: React.FC = () => {
       badge: 50,
       team:"As Far As I'm Concerned"
     },
-    {
-      name: "Ignacio Pelayo",
-      raceNumber: "128",
-      nationality: "🇲🇽",
-      finishTime: "TBD",
-      badge: 50,
-    },
+   
     {
       name: "Fernando Monjaraz",
-      raceNumber: "129",
+      raceNumber: "128",
       nationality: "🇲🇽",
       finishTime: "TBD",
       badge: 50,
@@ -903,6 +897,14 @@ const Ltdf2026: React.FC = () => {
       finishTime: "TBD",
       badge: 50,
       team:'ÓVELPAA Team'
+    },
+      {
+      name: "Cooper Ray",
+      raceNumber: "133",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+      team:''
     },
   ];
 
@@ -944,14 +946,6 @@ const Ltdf2026: React.FC = () => {
       finishTime: "TBD",
       badge: 50,
       team:'Gravel Mafia'
-    },
-    {
-      name: "Ana Saucedo",
-      raceNumber: "57",
-      nationality: "🇲🇽",
-      finishTime: "TBD",
-      badge: 50,
-      team:'Legends of gravel'
     },
     {
       name: "PAULA XIMENA Zenteno Arvizu",
@@ -1184,6 +1178,14 @@ const Ltdf2026: React.FC = () => {
       finishTime: "TBD",
       badge: 50,
     },
+    {
+       name: "Hector Castillo & Ana Saucedo",
+      raceNumber: "023",
+      nationality: "🇲🇽",
+      finishTime: "TBD",
+      badge: 50,
+
+    }
   ];
 
   useEffect(() => {
@@ -1278,7 +1280,7 @@ const Ltdf2026: React.FC = () => {
           <Row>
             <h1 className="custom-title">RUTA</h1>
             <iframe
-              src="https://ridewithgps.com/embeds?type=route&id=54701137&metricUnits=true&sampleGraph=true"
+              src="https://www.followmychallenge.com/live/letourdefrankie26/?iframe"
               style={{ width: "100%", height: "500px", border: "none" }}
             ></iframe>
             <Col
