@@ -19,6 +19,8 @@ import whlkngsLogo from "../../images/thewheelkngs.svg";
 import ltdfOrbeaLogo from "../../images/ltdfOrbea.svg";
 import ravenLogo from "../../images/raven.svg";
 import hutchinsonLogo from "../../images/hutchinson.svg";
+import bikeFitLogo from "../../images/bikeFit.png"
+
 
 import "./Sponsors.css";
 
@@ -87,9 +89,9 @@ const Sponsors: React.FC = () => {
         <Col className="silver-logo">
           <img src={terremotoLogo} alt="terremotoCrew" />
         </Col>
-        {/* <Col className="silver-logo">
-          <img src={setecientosLogo} alt="setecientosmx" />
-        </Col> */}
+        <Col className="silver-logo">
+          <img src={bikeFitLogo} alt="bikeFitMx" style={{ width: "150px" }} />
+        </Col>
         {/* <Col className="silver-logo">
           <img src={rutasLogo} alt="rutas" />
         </Col>
