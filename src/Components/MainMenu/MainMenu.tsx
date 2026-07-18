@@ -30,8 +30,8 @@ function MainMenu() {
                 <NavDropdown.Item href="#action3">Fecha 3</NavDropdown.Item>
               </LinkContainer>
               </NavDropdown> */}
-            <LinkContainer to="/ltdf-2026">
-              <Nav.Link>LTDF 2026</Nav.Link>
+            <LinkContainer to="/ltdf-2027">
+              <Nav.Link>LTDF 2027</Nav.Link>
             </LinkContainer>
             {/* <LinkContainer to="/brevet-2025">
               <Nav.Link>BREVET 2025</Nav.Link>
@@ -49,6 +49,9 @@ function MainMenu() {
               <Nav.Link>BREVET</Nav.Link>
             </LinkContainer> */}
             <NavDropdown title="PAST EDITIONS" id="navbarScrollingDropdown">
+              <LinkContainer to="/ltdf-2026">
+                <Nav.Link>LTDF 2026</Nav.Link>
+              </LinkContainer>
               <LinkContainer to="/ltdf-2025">
                 <Nav.Link>LTDF 2025</Nav.Link>
               </LinkContainer>
