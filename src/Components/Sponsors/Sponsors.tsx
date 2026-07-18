@@ -16,7 +16,7 @@ import cushCoreLogo from "../../images/cushcore.svg";
 import fmcLogo from "../../images/fmcOne.png";
 import tentenpieLogo from "../../images/tentenpie.png";
 import whlkngsLogo from "../../images/thewheelkngs.svg";
-import ltdfOrbeaLogo from "../../images/ltdfOrbea.svg";
+import ltdfOrbeaLogo from "../../images/ltdf-2027-logo.svg";
 import ravenLogo from "../../images/raven.svg";
 import hutchinsonLogo from "../../images/hutchinson.svg";
 import bikeFitLogo from "../../images/bikeFit.png"
