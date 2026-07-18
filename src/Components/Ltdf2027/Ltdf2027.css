@@ -1,0 +1,247 @@
+.responsive-iframe-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio for video */
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.filter-input {
+  width: 150px;
+}
+
+@media (max-width: 768px) {
+  .filter-input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+.table-container {
+  min-height: 400px;
+  overflow-x: auto;
+}
+
+.table-container table {
+  background-color: #f8f9fa;
+}
+
+.table-container table thead {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.table-container table thead th {
+  font-weight: 700;
+  border-color: #ffc107;
+  padding: 12px 8px;
+}
+
+.table-container table tbody tr {
+  background-color: #fff;
+  border-color: #ddd;
+}
+
+.table-container table tbody tr:hover {
+  background-color: #fff3cd;
+}
+
+.table-container table tbody td {
+  padding: 10px 8px;
+  color: #333;
+  border-color: #ddd;
+}
+
+.table-container table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.table-container table tbody tr:nth-child(even):hover {
+  background-color: #fff3cd;
+}
+
+.pagination-controls {
+  margin-top: 20px;
+  text-align: center;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#eventbrite-widget-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 425px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 16px 0;
+}
+
+#eventbrite-widget-container > div {
+  width: 100%;
+}
+
+#eventbrite-widget-container iframe {
+  width: 100% !important;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  #eventbrite-widget-container {
+    width: 100%;
+  }
+
+  #eventbrite-widget-container iframe {
+    width: 100% !important;
+  }
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-start !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.btn-container button {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.faq-section {
+  text-align: center;
+  padding: 10px 0 30px;
+}
+
+.faq-subtitle {
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.faq-accordion {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-accordion .accordion-item {
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.faq-accordion .accordion-button {
+  background-color: #111;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: none;
+}
+
+.faq-accordion .accordion-button:not(.collapsed) {
+  background-color: #1a1a1a;
+  color: #ffc107;
+}
+
+.faq-accordion .accordion-button::after {
+  filter: invert(1);
+}
+
+.faq-accordion .accordion-button:focus {
+  box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.4);
+}
+
+.faq-accordion .accordion-body {
+  background-color: #111;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.faq-accordion .accordion-body a {
+  color: #ffc107;
+}
+
+.race-details-section {
+  scroll-margin-top: 80px;
+  padding: 20px 0 10px;
+  text-align: center;
+}
+
+.race-details-copy {
+  color: #fff;
+  max-width: 720px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+}
+
+.race-details-note {
+  color: #fff;
+  max-width: 720px;
+  margin: 0 auto 30px;
+  padding: 14px 18px;
+  border: 1px solid #ffc107;
+  border-radius: 6px;
+  background-color: rgba(255, 193, 7, 0.08);
+  line-height: 1.6;
+}
+
+.race-details-note strong {
+  color: #ffc107;
+}
+
+.race-details-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.race-details-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 140px;
+}
+
+.race-details-stat-value {
+  color: #ffc107;
+  font-size: 1.6em;
+  font-weight: 700;
+}
+
+.race-details-stat-label {
+  color: #fff;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .race-details-stats {
+    gap: 20px;
+  }
+
+  .race-details-stat {
+    min-width: 120px;
+  }
+}

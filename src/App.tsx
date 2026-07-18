@@ -13,6 +13,7 @@ import BrevetGravelSeries from "./Components/BrevetGravelSeries/BrevetGravelSeri
 import Fecha2 from "./Components/BrevetGravelSeries/Fecha2/Fecha2";
 import Ltdf2025 from "./Components/Ltdf2025";
 import Ltdf2026 from "./Components/Ltdf2026/Ltdf2026";
+import Ltdf2027 from "./Components/Ltdf2027/Ltdf2027";
 import BrevetNovember from "./Components/Brevet2025/Brevet2025";
 import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
 
@@ -38,6 +39,7 @@ function App() {
           <Route path="/fecha-3" element={<Fecha2 />} />
           <Route path="/ltdf-2025" element={<Ltdf2025/>}></Route>
           <Route path="/ltdf-2026" element={<Ltdf2026/>}></Route>
+          <Route path="/ltdf-2027" element={<Ltdf2027/>}></Route>
           <Route path="/privacy-policy" element={<PrivacyPolicy/>}></Route>
 
 
