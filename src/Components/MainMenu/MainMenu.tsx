@@ -39,12 +39,10 @@ function MainMenu() {
             {/* <LinkContainer to="/MapRoute">
               <Nav.Link>ROUTE</Nav.Link>
             </LinkContainer> */}
-            <LinkContainer to="/Rules">
+            {/* <LinkContainer to="/Rules">
               <Nav.Link>RULES</Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/privacy-policy">
-              <Nav.Link>PRIVACY POLICY</Nav.Link>
-            </LinkContainer>
+            </LinkContainer> */}
+
             {/* <LinkContainer to="/Brevet">
               <Nav.Link>BREVET</Nav.Link>
             </LinkContainer> */}
@@ -76,6 +74,9 @@ function MainMenu() {
               </NavDropdown.Item> */}
             </NavDropdown>
             <Nav.Link href="#pricing">ABOUT US</Nav.Link>
+            <LinkContainer to="/privacy-policy">
+              <Nav.Link>PRIVACY POLICY</Nav.Link>
+            </LinkContainer>
             <Nav.Link
               href="https://www.instagram.com/letourdefrankie/"
               target="blank"

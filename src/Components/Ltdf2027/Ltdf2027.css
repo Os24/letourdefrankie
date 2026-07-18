@@ -71,42 +71,32 @@
 }
 
 .pagination-controls {
-  margin-top: 20px;
-  text-align: center;
-  min-height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: none;
 }
 
 #eventbrite-widget-container {
-  display: flex;
-  justify-content: center;
   width: 100%;
   min-height: 425px;
   margin: 0 auto;
   background-color: #fff;
   border-radius: 8px;
-  padding: 16px 0;
+  padding: 16px;
+  box-sizing: border-box;
 }
 
-#eventbrite-widget-container > div {
-  width: 100%;
+/* Eventbrite's script injects its own nested wrapper(s) around the iframe,
+   sometimes with a fixed pixel width. Force every level to fill the
+   container instead of shrinking to its own intrinsic/default size. */
+#eventbrite-widget-container * {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
 }
 
+#eventbrite-widget-container > div,
 #eventbrite-widget-container iframe {
+  display: block !important;
   width: 100% !important;
-  max-width: 100%;
-}
-
-@media (max-width: 768px) {
-  #eventbrite-widget-container {
-    width: 100%;
-  }
-
-  #eventbrite-widget-container iframe {
-    width: 100% !important;
-  }
+  height: 100%;
 }
 
 .btn-container {
