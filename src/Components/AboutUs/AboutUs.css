@@ -1,0 +1,27 @@
+.about-us-container {
+  background-color: black;
+  min-height: 100vh;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.about-us-copy {
+  color: #fff;
+  max-width: 720px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+}
+
+.about-us-contact {
+  color: #fff;
+  margin-top: 10px;
+}
+
+.about-us-contact a {
+  color: #ffc107;
+  text-decoration: none;
+}
+
+.about-us-contact a:hover {
+  text-decoration: underline;
+}

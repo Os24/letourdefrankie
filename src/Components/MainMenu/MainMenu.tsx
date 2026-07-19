@@ -73,7 +73,9 @@ function MainMenu() {
                 Something else here
               </NavDropdown.Item> */}
             </NavDropdown>
-            <Nav.Link href="#pricing">ABOUT US</Nav.Link>
+            <LinkContainer to="/about-us">
+              <Nav.Link>ABOUT US</Nav.Link>
+            </LinkContainer>
             <LinkContainer to="/privacy-policy">
               <Nav.Link>PRIVACY POLICY</Nav.Link>
             </LinkContainer>
