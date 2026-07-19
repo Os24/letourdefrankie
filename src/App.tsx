@@ -16,6 +16,7 @@ import Ltdf2026 from "./Components/Ltdf2026/Ltdf2026";
 import Ltdf2027 from "./Components/Ltdf2027/Ltdf2027";
 import BrevetNovember from "./Components/Brevet2025/Brevet2025";
 import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
+import AboutUs from "./Components/AboutUs/AboutUs";
 
 
 
@@ -41,6 +42,7 @@ function App() {
           <Route path="/ltdf-2026" element={<Ltdf2026/>}></Route>
           <Route path="/ltdf-2027" element={<Ltdf2027/>}></Route>
           <Route path="/privacy-policy" element={<PrivacyPolicy/>}></Route>
+          <Route path="/about-us" element={<AboutUs/>}></Route>
 
 
         </Routes>
