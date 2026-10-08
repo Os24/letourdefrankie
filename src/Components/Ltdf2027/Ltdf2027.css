@@ -235,3 +235,9 @@ html {
     min-width: 120px;
   }
 }
+
+/* Prevent horizontal page drift on mobile (nested Row negative margins) */
+.ltdf2027-page {
+  overflow-x: clip;
+  max-width: 100vw;
+}

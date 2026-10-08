@@ -155,7 +155,7 @@ const Ltdf2027: React.FC = () => {
   };
 
   return (
-    <div className="brevet-container">
+    <div className="brevet-container ltdf2027-page">
       <Container>
         <Row>
           <Col className="flyer-container">
@@ -252,7 +252,7 @@ const Ltdf2027: React.FC = () => {
             <div className="responsive-iframe-container">
               <iframe
                 className="responsive-iframe"
-                src="https://www.youtube.com/embed/mVe0L4n1C5A?si=q2cKBKmLMLUIDhsE"
+                src="https://www.youtube.com/embed/Y4v55Ko5C5M?si=r8nGGmXixap-Visk"
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               ></iframe>
@@ -305,6 +305,14 @@ const Ltdf2027: React.FC = () => {
                 </Accordion.Item>
                 <Accordion.Item eventKey="4">
                   <Accordion.Header>
+                    ¿El precio para duplas incluye a los dos participantes?
+                  </Accordion.Header>
+                  <Accordion.Body>
+                    Sí, el precio es por los dos.
+                  </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="5">
+                  <Accordion.Header>
                     ¿Qué incluye mi inscripción?
                   </Accordion.Header>
                   <Accordion.Body>
@@ -321,7 +329,7 @@ const Ltdf2027: React.FC = () => {
                     </ul>
                   </Accordion.Body>
                 </Accordion.Item>
-                <Accordion.Item eventKey="5">
+                <Accordion.Item eventKey="6">
                   <Accordion.Header>
                     ¿Qué equipo necesito llevar?
                   </Accordion.Header>
@@ -332,7 +340,7 @@ const Ltdf2027: React.FC = () => {
                     equipo completo está detallado en el reglamento oficial.
                   </Accordion.Body>
                 </Accordion.Item>
-                <Accordion.Item eventKey="6">
+                <Accordion.Item eventKey="7">
                   <Accordion.Header>¿Qué es el Live Tracking?</Accordion.Header>
                   <Accordion.Body>
                     Cada corredor porta un rastreador satelital durante todo
@@ -341,7 +349,7 @@ const Ltdf2027: React.FC = () => {
                     real desde cualquier parte del mundo.
                   </Accordion.Body>
                 </Accordion.Item>
-                <Accordion.Item eventKey="7">
+                <Accordion.Item eventKey="8">
                   <Accordion.Header>
                     ¿Dónde encuentro el reglamento completo?
                   </Accordion.Header>
